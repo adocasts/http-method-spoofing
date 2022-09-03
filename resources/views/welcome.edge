@@ -7,37 +7,37 @@
   @endif
 
   <div class="grid lg:grid-cols-4 gap-6">
-    <form method="POST" action="{{ route('ping.post') }}">
+    @forms.post({ action: route('ping.post') })
       <h2 class="font-semibold">POST Request</h2>
       @!input({ name: 'name', placeholder: 'Name' })
       @!input({ name: 'title', placeholder: 'Title' })
 
       @!button({ type: 'submit', text: 'Send Post' })
-    </form>
+    @end
 
-    <form method="POST" action="{{ route('ping.put') }}">
+    @forms.put({ action: route('ping.put', {}, { qs: { test: 'testing' } }) })
       <h2 class="font-semibold">PUT Request</h2>
       @!input({ name: 'name', placeholder: 'Name' })
       @!input({ name: 'title', placeholder: 'Title' })
 
       @!button({ type: 'submit', text: 'Send Put' })
-    </form>
+    @end
 
-    <form method="POST" action="{{ route('ping.patch') }}">
+    @forms.patch({ action: route('ping.patch') })
       <h2 class="font-semibold">PATCH Request</h2>
       @!input({ name: 'name', placeholder: 'Name' })
       @!input({ name: 'title', placeholder: 'Title' })
 
       @!button({ type: 'submit', text: 'Send Patch' })
-    </form>
+    @end
 
-    <form method="POST" action="{{ route('ping.delete') }}">
+    @forms.delete({ action: route('ping.delete') })
       <h2 class="font-semibold">DELETE Request</h2>
       @!input({ name: 'name', placeholder: 'Name' })
       @!input({ name: 'title', placeholder: 'Title' })
 
       @!button({ type: 'submit', text: 'Send Delete' })
-    </form>
+    @end
   </div>
 
 
